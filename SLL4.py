@@ -28,7 +28,7 @@ class LinkedList:
 
         while temp:     # temp != None
             print(temp.data)
-            temp = temp.next
+            temp = temp.next.next
 
 list = LinkedList()
 

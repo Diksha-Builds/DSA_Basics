@@ -25,15 +25,20 @@ class LinkedList:
 
     def print(self):
         temp = self.head
-
-        while temp:     # temp != None
-            print(temp.data)
+        sum = 0
+        
+        while(temp != None):
+            if temp.data > 0:
+                sum += temp.data
             temp = temp.next
+            
+        print(sum)
+        
 
 list = LinkedList()
 
 n1 = Node(10)
-n2 = Node(20)
+n2 = Node(-20)
 n3 = Node(30)
 
 list.append(n1)

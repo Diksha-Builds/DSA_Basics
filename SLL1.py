@@ -25,10 +25,14 @@ class LinkedList:
 
     def print(self):
         temp = self.head
+        count = 0
 
-        while temp:     # temp != None
-            print(temp.data)
+        while(temp != None):
+            count+=1
             temp = temp.next
+
+        print(count)
+        
 
 list = LinkedList()
 
