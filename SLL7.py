@@ -1,4 +1,4 @@
-# Reversing the linked list
+# Reversing the Linked List
 
 class Node :
 
@@ -12,6 +12,8 @@ class LinkedList:
         self.head = None
 
     def append(self, new_node):
+            print("After appending a new node : ")
+
             if(self.head == None):
                 self.head = new_node
             else:
@@ -23,6 +25,8 @@ class LinkedList:
                 temp.next = new_node    # appending new node
 
     def insert(self, new_node, pos):
+        print("After inserting a new node : ")
+
         if pos == 1:    # inserting at first position
             new_node.next = self.head
             self.head = new_node
@@ -38,6 +42,8 @@ class LinkedList:
     def del_node(self, value):
         temp = self.head
         prev = None
+
+        print("After deleting a node : ")
 
         # deleting first node
         if temp.data == value:
@@ -55,6 +61,19 @@ class LinkedList:
             return
         prev.next = temp.next
         temp = None
+
+    def reverse(self):
+        curr = self.head
+        prev = None
+
+        print("After reversing the linked list : ")
+
+        while(curr):
+            nextnode = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nextnode
+        self.head = prev
 
     def print(self):
         temp = self.head
@@ -82,4 +101,7 @@ list.insert(Node(66), 7)
 list.print()
 
 list.del_node(40)
+list.print()
+
+list.reverse()
 list.print()
