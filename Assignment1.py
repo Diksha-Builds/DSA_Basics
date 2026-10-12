@@ -1,3 +1,5 @@
+#1. Create Linked List
+
 class Node:
 
     def __init__(self, val):
@@ -19,6 +21,27 @@ class LinkedList:
             while(temp.next != None):
                 temp = temp.next
             temp.next = new_node
+
+#2. Traverse and print the node values
+
+    def count(self):
+            temp = self.head
+            iCount = 0
+    
+            while(temp != None):
+                iCount+=1
+                temp = temp.next
+    
+            return iCount
+    
+    def print(self):
+        temp = self.head
+
+        while(temp != None):
+            print(temp.data)
+            temp = temp.next
+
+# Insert node at a specific position
 
     def insertAtPos(self, new_node, pos):
 
@@ -43,6 +66,8 @@ class LinkedList:
             new_node.next = temp.next
             temp.next = new_node
 
+# Find middle node and print its value
+
     def findMiddle(self):
         if(self.head == None):
             print("Linked List is empty")
@@ -56,6 +81,8 @@ class LinkedList:
             fast = fast.next.next
 
         print("Middle element is : ",slow.data)
+
+# 5. Delete node
 
     def deleteNode(self, value):
         temp = self.head
@@ -79,6 +106,8 @@ class LinkedList:
         prev.next = temp.next
         temp = None
 
+# 6. Reverse List
+
     def reverse(self):
         curr = self.head
         prev = None
@@ -90,6 +119,8 @@ class LinkedList:
             curr = nextnode
 
         self.head = prev
+
+# 7. Calculate the sum of every two consecutive node values
 
     def sumConsecutive(self):
         temp = self.head
@@ -160,6 +191,7 @@ iRet = lobj.count()
 print("Total no. of nodes : ",iRet)
 
 lobj.reverse()
+
 lobj.print()
 
 print("Sum of two consecutive numbers : ")
